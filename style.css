@@ -294,6 +294,7 @@ section.active, section.visible {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: top center; /* Focus on faces by default */
     filter: sepia(10%) contrast(1.05); /* Modern clean filter */
     transition: transform 0.8s ease;
     display: block;
@@ -581,7 +582,16 @@ section.active, section.visible {
     .gallery-item {
         width: 100%;
         transform: none !important; /* No rotation */
-        margin-bottom: 20px;
+        margin-bottom: 25px;
+    }
+
+    /* Make image container taller on mobile so faces are visible */
+    .img-wrapper {
+        height: 300px;
+    }
+
+    .gallery-item img {
+        object-position: top center; /* Focus on faces */
     }
 
     .gallery-item:hover {
