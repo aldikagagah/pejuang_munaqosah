@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Munaqosah Edition - Untukmu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  </head>
+  <body>
+    <!-- Audio Player Control -->
+    <div class="audio-control">
+      <button id="toggle-music" class="btn-icon">
+        <i class="fas fa-play"></i>
+      </button>
+      <span class="music-hint">Klik untuk musik 🎵</span>
+    </div>
+
+    <!-- Audio Element -->
+    <audio id="bg-music" loop>
+      <source
+        src="https://commondatastorage.googleapis.com/codeskulptor-demos/riceracer_assets/music/win.ogg"
+        type="audio/ogg"
+      />
+    </audio>
+
+    <!-- Background Particles Container -->
+    <div id="particles-js"></div>
+
+    <main class="container">
+      <!-- SECTION 1: HERO -->
+      <section id="hero" class="fade-in-section active">
+        <div class="hero-content">
+          <span class="greeting-badge">👋 Hai, Pejuang Skripsi</span>
+          <h1>Hei, Calon Sarjana Hebat 🤍</h1>
+          <p class="hero-text">
+            Kalau kamu lagi baca ini, kemungkinan besar kamu lagi overthinking. Tarik napas dulu,
+            ya.
+          </p>
+
+          <div class="glass-card mini-quote">
+            <p>
+              <strong>Kamu sudah sampai sejauh ini.</strong><br />Dan itu bukan hal yang bisa
+              dilakukan semua orang.
+            </p>
+          </div>
+
+          <button class="btn-primary" onclick="scrollToSection('struggle')">
+            ✨ Klik ini kalau kamu lagi ragu
+          </button>
+        </div>
+      </section>
+
+      <!-- SECTION 2: STRUGGLE -->
+      <section id="struggle" class="fade-in-section">
+        <span class="section-tag">Perjuanganmu</span>
+        <h2>Ingat Seberapa Jauh Kamu Melangkah?</h2>
+
+        <div class="card-grid">
+          <div class="card glass-card">
+            <div class="icon-box">
+              <i class="fas fa-book-open"></i>
+            </div>
+            <p>Ingat waktu awal skripsi terasa berat banget?</p>
+          </div>
+          <div class="card glass-card">
+            <div class="icon-box">
+              <i class="fas fa-edit"></i>
+            </div>
+            <p>Ingat revisi yang bikin capek & hampir nyerah?</p>
+          </div>
+          <div class="card glass-card">
+            <div class="icon-box">
+              <i class="fas fa-moon"></i>
+            </div>
+            <p>Ingat begadang demi benerin satu bab?</p>
+          </div>
+        </div>
+
+        <div class="text-center mt-5">
+          <p class="highlight-text">Kamu nggak berhenti. Kamu nggak lari.</p>
+          <div class="quote-container">
+            <p>
+              "Orang yang bisa sampai di tahap munaqosah itu bukan orang biasa. Itu orang yang tahan
+              banting. <strong>Itu kamu.</strong>"
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION NEW: MEMORY LANE (JEJAK KENANGAN) -->
+      <section id="memories" class="fade-in-section">
+        <span class="section-tag">Jejak Kenangan</span>
+        <h2>Karena Kamu Tidak Sendiri</h2>
+        <p class="subtitle">
+          Lihat lagi ke belakang sebentar. Ada tawa, ada teman, ada proses yang mahal.
+        </p>
+
+        <!-- Gallery Grid (Modern Masonry Style) -->
+        <div class="gallery-grid">
+          <!-- User needs to replace src with actual photos in assets folder -->
+          <div class="gallery-item">
+            <div class="img-wrapper">
+              <img
+                src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=500&q=60"
+                alt="Momen Sempro"
+              />
+            </div>
+            <div class="caption">Waktu Sempro 🎓</div>
+          </div>
+          <div class="gallery-item">
+            <div class="img-wrapper">
+              <img
+                src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=500&q=60"
+                alt="Belajar Bareng"
+              />
+            </div>
+            <div class="caption">Begadang Bareng ☕</div>
+          </div>
+          <div class="gallery-item">
+            <div class="img-wrapper">
+              <img
+                src="https://images.unsplash.com/photo-1525921429624-479b6a26d84d?auto=format&fit=crop&w=500&q=60"
+                alt="Jalan-jalan"
+              />
+            </div>
+            <div class="caption">Healing Dikit 🌿</div>
+          </div>
+          <div class="gallery-item">
+            <div class="img-wrapper">
+              <img
+                src="https://images.unsplash.com/photo-1606761568499-6d2451b23c66?auto=format&fit=crop&w=500&q=60"
+                alt="Revisi"
+              />
+            </div>
+            <div class="caption">Revisi Teroos 📝</div>
+          </div>
+        </div>
+        <p class="note-text">
+          <em>*Ganti foto-foto di atas dengan momen terbaikmu di folder assets!</em>
+        </p>
+      </section>
+
+      <!-- SECTION 3: REALITY CHECK -->
+      <section id="reality" class="fade-in-section">
+        <span class="section-tag">Reality Check</span>
+        <h2>Otak Kamu vs Kenyataan</h2>
+
+        <div class="comparison-container">
+          <div class="worry-box glass-card">
+            <h3>😰 Overthinking</h3>
+            <ul>
+              <li>“Kalau ditanya ini gimana?”</li>
+              <li>“Kalau blank gimana?”</li>
+              <li>“Dosennya serem...”</li>
+            </ul>
+          </div>
+
+          <div class="reality-box glass-card glow-border">
+            <h3>✨ Kenyataan</h3>
+            <p>Sidang itu <strong>diskusi</strong>, bukan interogasi.</p>
+            <p>Dosen itu <strong>penguji</strong>, bukan musuh.</p>
+            <p>Kamu <strong>paling ngerti</strong> skripsimu.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 4: AFFIRMATION -->
+      <section id="affirmation" class="fade-in-section">
+        <h2>Baca Pelan-Pelan</h2>
+        <div class="affirmation-cards">
+          <div class="affirmation-item">Aku Siap 🔥</div>
+          <div class="affirmation-item">Aku Mampu 💪</div>
+          <div class="affirmation-item">Aku Paham Tulisanku 📚</div>
+          <div class="affirmation-item">Aku Lebih Besar dari Rasa Takut ✨</div>
+        </div>
+        <p class="mt-4 highlight-text">90% hal yang kamu khawatirkan nggak akan terjadi.</p>
+      </section>
+
+      <!-- SECTION 5: CLOSING Message -->
+      <section id="closing" class="fade-in-section">
+        <div class="letter-card glass-card">
+          <p>Besok kamu bukan cuma sidang.</p>
+          <p>Besok kamu buktiin kalau kamu bisa.</p>
+          <p>Dan apapun yang terjadi di ruangan itu,<br />aku tetap bangga.</p>
+          <p class="signature">Selalu.</p>
+        </div>
+
+        <button id="final-btn" class="btn-primary mt-5 pulsate">
+          🤍 Klik ini kalau sudah selesai sidang
+        </button>
+      </section>
+    </main>
+
+    <!-- POPUP MODAL -->
+    <div id="popup-modal" class="modal hidden">
+      <div class="modal-content glass-card">
+        <span class="close-btn">&times;</span>
+        <div id="typing-container"></div>
+      </div>
+    </div>
+
+    <footer>
+      <p>Dibuat dengan 🤍 untuk pejuang munaqosah.</p>
+      <p class="small">Semangat sayang, gelarnya sudah di depan mata!</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
